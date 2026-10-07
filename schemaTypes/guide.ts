@@ -10,6 +10,8 @@ export const guide = defineType({
     defineField({name: 'usAbbreviation', title: 'US abbreviation', type: 'string'}),
     defineField({name: 'ukAbbreviation', title: 'UK abbreviation', type: 'string'}),
     defineField({name: 'stitchSymbol', title: 'Stitch symbol', type: 'string'}),
+    defineField({name: 'stitchSymbolImage', title: 'Stitch symbol image', type: 'image', options: {hotspot: true}, description: 'Use this when the stitch symbol is an image rather than a text character.'}),
+    defineField({name: 'referenceImages', title: 'Three reference PNG images', type: 'array', of: [{type: 'image', options: {hotspot: true}}], validation: r => r.max(3), description: 'Upload up to three supporting PNG images for Basic or Advanced stitches.'}),
     defineField({name: 'instructions', title: 'Written instructions', type: 'array', of: [{type: 'block'}]}),
     defineField({name: 'steps', title: 'Step-by-step media', type: 'array', of: [{type: 'object', fields: [
       defineField({name: 'title', title: 'Step title', type: 'string'}),
