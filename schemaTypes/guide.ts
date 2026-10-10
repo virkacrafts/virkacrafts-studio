@@ -7,6 +7,7 @@ export const guide = defineType({
     defineField({name: 'slug', title: 'URL slug', type: 'slug', options: {source: 'title'}, validation: r => r.required()}),
     defineField({name: 'level', title: 'Skill level', type: 'string', options: {list: ['Basic', 'Advanced']}, initialValue: 'Basic'}),
     defineField({name: 'stitchImage', title: 'Stitch sample image', type: 'image', options: {hotspot: true}}),
+    defineField({name: 'drawingImage', title: 'Stitch drawing / chart image', type: 'image', options: {hotspot: true}, description: 'This appears in the Drawing column beside the stitch sample.'}),
     defineField({name: 'usAbbreviation', title: 'US abbreviation', type: 'string'}),
     defineField({name: 'ukAbbreviation', title: 'UK abbreviation', type: 'string'}),
     defineField({name: 'stitchSymbol', title: 'Stitch symbol', type: 'string'}),
