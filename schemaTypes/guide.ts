@@ -1,12 +1,8 @@
 import {defineField, defineType} from 'sanity'
-import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
 export const guide = defineType({
   name: 'guide', title: 'Stitch Guides', type: 'document',
-  orderings: [orderRankOrdering],
-  fields: (context) => [
-    // Managed by the Studio drag-and-drop list. It stays hidden in the editor.
-    orderRankField({type: 'guide', context, hidden: true}),
+  fields: [
     defineField({name: 'title', title: 'Stitch name', type: 'string', validation: r => r.required()}),
     defineField({name: 'slug', title: 'URL slug', type: 'slug', options: {source: 'title'}, validation: r => r.required()}),
     defineField({name: 'level', title: 'Skill level', type: 'string', options: {list: ['Basic', 'Advanced']}, initialValue: 'Basic'}),
